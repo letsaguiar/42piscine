@@ -1,9 +1,10 @@
+`<div align="center">
+  <h1>Welcome to the 42 Piscine Learning Repository!</h1>
 
-**Welcome to the 42 Piscine Learning Repository!**
+  ![42 Piscine](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F1-fUC6_yntE%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=7b0c1d447746e921311b6cb8a12731a914c6771c1238c01a7f99634aa6e034d4&ipo=images)
 
-![42 Piscine](insert_image_url_here)
-
-Are you ready to embark on an exciting coding journey at École 42's Piscine? This repository is your companion, filled with valuable resources, tips, and examples to help you navigate through the challenges and make the most out of your learning experience.
+  <p>Are you ready to embark on an exciting coding journey at École 42's Piscine? This repository is your companion, filled with valuable resources, tips, and examples to help you navigate through the challenges and make the most out of your learning experience.</p>
+</div>
 
 ## About the 42 Piscine
 
