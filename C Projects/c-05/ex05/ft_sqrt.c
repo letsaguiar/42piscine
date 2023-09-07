@@ -19,14 +19,22 @@ int	ft_pow(int nb, int power)
 
 int	ft_sqrt(int nb)
 {
-	int	i;
+	int	x;
+	int	y;
 
-	i = 0;
-	while (i <= nb / 2)
+	if (nb == -2147483648)
+		return (0);
+	if (nb < 0)
+		nb *= -1;
+	x = nb;
+	y = 1;
+	while (x > y)
 	{
-		if (ft_pow(i, 2) == nb)
-			return (i);
-		i++;
+		x = (x + y) / 2;
+		y = nb / x;
 	}
-	return (0);
+	if (ft_pow(x, 2) == nb)
+		return (x);
+	else
+		return (0);
 }
