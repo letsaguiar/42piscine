@@ -12,6 +12,11 @@
 
 #include <unistd.h>
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
 void	ft_print_comb(void)
 {
 	char	n1;
@@ -27,9 +32,9 @@ void	ft_print_comb(void)
 			n3 = n2 + 1;
 			while (n3 <= 57)
 			{
-				write(1, &n1, 1);
-				write(1, &n2, 1);
-				write(1, &n3, 1);
+				ft_putchar(n1);
+				ft_putchar(n2);
+				ft_putchar(n3);
 				if (n3 < 57 || n2 < 56 || n1 < 55)
 					write(1, ", ", 2);
 				n3++;
