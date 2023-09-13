@@ -13,15 +13,13 @@
 int	ft_str_is_printable(char *str)
 {
 	int	i;
-	int	result;
 
-	result = 1;
 	i = 0;
 	while (str[i])
 	{
 		if (str[i] < 32)
-			result = 0;
+			return (0);
 		i++;
-	}	
-	return (result);
+	}
+	return (1);
 }

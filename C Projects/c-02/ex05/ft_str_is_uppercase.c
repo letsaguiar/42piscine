@@ -12,27 +12,19 @@
 
 int	ft_char_is_uppercase(char c)
 {
-	if (c >= 65 && c <= 90)
-		return (1);
-	else
-		return (0);
+	return (c >= 65 && c <= 90);
 }
 
 int	ft_str_is_uppercase(char *str)
 {
 	int	i;
-	int	result;
 
-	result = 1;
 	i = 0;
 	while (str[i])
 	{
 		if (!ft_char_is_uppercase(str[i]))
-		{
-			result = 0;
-			break ;
-		}
+			return (0);
 		i++;
 	}
-	return (result);
+	return (1);
 }

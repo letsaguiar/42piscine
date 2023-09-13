@@ -12,10 +12,7 @@
 
 int	ft_char_is_lowercase(char c)
 {
-	if (c >= 97 && c <= 122)
-		return (1);
-	else
-		return (0);
+	return (c >= 97 && c <= 122);
 }
 
 char	*ft_strupcase(char *str)

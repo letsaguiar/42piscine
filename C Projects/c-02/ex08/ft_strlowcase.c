@@ -12,10 +12,7 @@
 
 int	ft_char_is_uppercase(char c)
 {
-	if (c >= 65 && c <= 90)
-		return (1);
-	else
-		return (0);
+	return (c >= 65 && c <= 90);
 }
 
 char	*ft_strlowcase(char *str)
