@@ -12,41 +12,24 @@
 
 int	ft_isspace(char c)
 {
-	if (
+	return (
 		c == ' '
 		|| c == '\t'
 		|| c == '\n'
 		|| c == '\v'
 		|| c == '\f'
 		|| c == '\r'
-	)
-		return (1);
-	else
-		return (0);
-}
-
-int	ft_validate_space(char *str, int i)
-{
-	if (!str[i - 1] || ft_isspace(str[i - 1]))
-		return (1);
-	else
-		return (0);
+	);
 }
 
 int	ft_issign(char c)
 {
-	if (c == '+' || c == '-')
-		return (1);
-	else
-		return (0);
+	return (c == '+' || c == '-');
 }
 
-int	ft_validate_sign(char *str, int i)
+int	ft_isnumeric(char c)
 {
-	if (!str[i - 1] || ft_isspace(str[i - 1]) || ft_issign(str[i - 1]))
-		return (1);
-	else
-		return (0);
+	return (c >= '0' && c <= '9');
 }
 
 int	ft_atoi(char *str)
@@ -55,21 +38,21 @@ int	ft_atoi(char *str)
 	int	minus_counter;
 	int	result;
 
+	i = 0;
+	while (ft_isspace(str[i]))
+		i++;
 	minus_counter = 0;
-	result = 0;
-	i = -1;
-	while (str[++i])
+	while (ft_issign(str[i]))
 	{
-		if (ft_isspace(str[i]) && ft_validate_space(str, i))
-			continue ;
-		if (str[i] == '+' && ft_validate_sign(str, i))
-			continue ;
-		if (str[i] == '-' && ft_validate_sign(str, i))
+		if (str[i] == '-')
 			minus_counter++;
-		else if (str[i] >= 48 && str[i] <= 57)
-			result = result * 10 + str[i] - 48;
-		else
-			break ;
+		i++;
+	}
+	result = 0;
+	while (ft_isnumeric(str[i]))
+	{
+		result = (result * 10) + (str[i] - '0');
+		i++;
 	}
 	if (minus_counter % 2 == 1)
 		result *= -1;
