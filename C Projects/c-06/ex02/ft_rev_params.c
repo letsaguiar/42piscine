@@ -6,7 +6,7 @@
 /*   By: lde-agui <lde-agui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 14:24:17 by lde-agui          #+#    #+#             */
-/*   Updated: 2023/08/30 14:33:37 by lde-agui         ###   ########.fr       */
+/*   Updated: 2023/09/15 08:24:06 by leticia-aguia    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,32 +29,19 @@ void	ft_putstr(char *str)
 	}
 }
 
-int	ft_count_args(char **args)
+void	ft_print_rev_params(char **args, int size)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (args[i])
-		i++;
-	return (i);
-}
-
-void	ft_print_rev_params(char **args)
-{
-	unsigned int	i;
-
-	i = ft_count_args(args) - 1;
-	while (i > 0)
+	while (size - 1 > 0)
 	{
-		ft_putstr(args[i]);
+		ft_putstr(args[size - 1]);
 		ft_putstr("\n");
-		i--;
+		size--;
 	}
 }
 
 int	main(int argc, char **argv)
 {
 	if (argc > 1)
-		ft_print_rev_params(argv);
+		ft_print_rev_params(argv, argc);
 	return (0);
 }
